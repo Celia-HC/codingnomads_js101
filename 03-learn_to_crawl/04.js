@@ -21,5 +21,23 @@
  * with clear and descriptive names.
  */
 
-let result = 0
-console.log("Label", result)
+let var1 = 4569;
+let var2 = 7893;
+let var3 = 6853;
+let luckyNumber = 7;
+
+let result1 = var1 + var2 + var3
+console.log("1.", result1)
+
+let result2 = var2 - var1 - var3
+console.log("2.", result2)
+
+let result3 = var1 * var2 * var3
+console.log("3.", result3)
+
+let result4 = var2 / (var3 - var1);
+
+console.log("4.", result4)
+
+let result5 = var2 % luckyNumber;
+console.log("5.", result5)

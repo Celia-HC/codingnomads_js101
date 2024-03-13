@@ -25,3 +25,21 @@
  * support for it is not everywhere.
  */
 
+let name = "Célia";
+let greeting = "Good day to you";
+let friend = "Dorian";
+let familyMember = "Antoine";
+let day = "13";
+let month = "03";
+let year = "2024";
+let age = "32";
+
+let greetingFriend = `${greeting} ${friend}`;
+let greetingFamilyMember = greeting + " " + familyMember;
+let greetingDate = `${greeting} ${friend}, today we are ${day}-${month}-${year}` 
+let ageCalculation = "In 20 years, I will be "+(20 + parseInt(age))+" years old."
+
+console.log(greetingFriend);
+console.log (greetingFamilyMember);
+console.log(greetingDate);
+console.log(ageCalculation);
