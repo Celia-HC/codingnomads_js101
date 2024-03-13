@@ -9,7 +9,7 @@ So in the following steps, you'll essentially create your own repository from sc
 1. **Clone** this repository to your machine.
 2. Create a _new_ repository on your GitHub account. _Don't_ fork this repository. Don't clone it yet. Take note of the URL of your new, blank GitHub repository:
 
-   ```text
+   ```text                                       
    git@github.com:<YOUR_USERNAME>/<YOUR_REPOSITORY_NAME>.git
    ```
 
