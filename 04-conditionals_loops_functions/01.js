@@ -85,11 +85,21 @@ switch (fare) {
         price = "";
 }
 
-/**/
+/*Création d'un nombre aléatoire entre 1 et 10 + Affichage pour vérifier cohérence + condition pour le 'free ride'*/
 let luckyNumber = getRandomNumber(1, 10);
 
-if (luckyNumber = 10 && fare!=='free fare') {
+console.log(luckyNumber);
+
+if (luckyNumber == 10 && fare!=='free fare') {
     console.log("Lucky you! Today you get to ride free of charge.");
 } else {
     console.log(`You will pay the ${fare}, that will be ${price} dollars, please`);
 }
+
+/*ERREURS COMISES EN APPRENANT :
+Ne pas créer les variables min et max avant la fonction getRandomNumber;
+Pour le dernier if, indiquer un simple = au lieu de == 
+    (Cela attribuait la valeur 10 à chaque fois,
+    donc toutes les personnes étaient gagnantes);
+Oublier des ; dans l'écritures des boucles for ou mal placer les () et les {};
+*/
