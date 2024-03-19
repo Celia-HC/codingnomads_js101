@@ -66,8 +66,14 @@ console.log(pythagoras(10, 20));
 console.log(pythagoras(30, 100));
 console.log(pythagoras(20, 50));
 
-// Do not modify anything below this line
+// Distances conversion
 
+// 1 mile = 1.609344 kilometers
+
+function MToKm (distInM) {
+    let distInKm = distInM * 1.609344;
+    return(console.log(`${distInM} miles is equivalent to ${distInKm} km`));
+}
 
 console.log(MToKm(100));
 console.log(KmToM(25));
