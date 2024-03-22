@@ -43,3 +43,6 @@ console.log(greetingFriend);
 console.log (greetingFamilyMember);
 console.log(greetingDate);
 console.log(ageCalculation);
+
+let phraseTest = 'Je suis à l\'aise'
+console.log(phraseTest)
