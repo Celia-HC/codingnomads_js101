@@ -70,3 +70,56 @@ stores =  [
     [ '4003IN', 'Target', 'IN', 'North', 'Attica' ],
     [ '4003KY', 'Target', 'KY', 'North', 'Ashland' ]
 ]
+
+// * 1. Log only the city of each store.
+for ( i = 0 ; i<stores.length ; i++ ) {
+    let city = stores[i][4];
+}
+
+//* 2. Log only the names of stores in state "CA".
+for ( i = 0 ; i<stores.length ; i++ ) {
+    if ( stores[i][2] == 'CA') {
+        let name = stores[i][1];
+        console.log(name);
+    }
+}
+
+// * 3. Log the number of Target stores in total.
+
+let targetStore = 0
+for ( i = 0 ; i<stores.length ; i++ ) {
+    if ( stores[i][1] == 'K-Mart') {
+        targetStore++;
+    }
+}
+console.log(targetStore);
+
+/* 4. Log the number of each type of store. I.e. 5 Targets, 10 K-Marts - log
+*    these with a presentation string. I.e. "There are __ K-Marts in total." */
+
+function numberOfStores (typeOfStore) {
+    let acc = 0;
+    for ( i = 0 ; i<stores.length ; i++ ) {
+        if ( stores[i][1] == typeOfStore) {
+            acc++;
+        }
+    }
+    return(`There are ${acc} ${typeOfStore} in total.`);
+}
+
+console.log(numberOfStores('Target'));
+console.log(numberOfStores('K-Mart'));
+console.log(numberOfStores('Best Buy'));
+console.log(numberOfStores('Circuit City'));
+console.log(numberOfStores('Appliance Direct'));
+
+// Afficher le nombre de type de magasin différents
+// (Non fini, à reprendre)
+
+let type = new Set();
+
+for (i=0;i<stores.length;i++) {
+    type.add(stores[i][1]);
+}
+
+console.log(type.size);

@@ -46,8 +46,8 @@ for (i = 1; i < 101; i++) {
 	numbers.push(i);
 }
 
-// Use another for loop to go through the array of numbers just created and
-// log the sum of all the numbers.
+/** Use another for loop to go through the array of numbers just created and
+*   log the sum of all the numbers.*/
 
 let sum = 0;
 
@@ -55,3 +55,54 @@ for (i = 0; i < numbers.length; i++) {
 	sum += numbers[i];
 }
 console.log(sum);
+
+/** Use the random number generator from previous labs and another for loop to
+ *  create a array of 100 random numbers. */
+
+function getRandomNumber(){
+    return Math.floor((Math.random() * 100) + 1);
+}
+
+let randomArray = []
+
+for ( i=0 ; i < 100 ; i++) {
+    randomArray[i]=getRandomNumber();
+}
+
+console.log(randomArray);
+console.log(randomArray.length);
+
+/**  7. Use another for loop to go over each of these random numbers and put them
+ *   in one of two arrays. One for odd numbers, and one for even numbers.*/
+
+let oddArray=[];
+let evenArray=[];
+
+for (i=0 ; i < 100 ; i++){
+    if ( randomArray[i] % 2 == 0 ) {
+        evenArray.push(randomArray[i]);
+    } else {
+        oddArray.push(randomArray[i]); 
+    }
+}
+
+console.log(evenArray);
+console.log(oddArray);
+
+/** * 8. Make the for loop that logs the sum of all the numbers in an array into a
+ *    function that takes an array as an argument and returns the sum. Use this
+ *    function to log the sum of the two arrays of odd and even numbers. */
+
+function sumOfArray(array) {
+    let sum = 0;
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+    return(sum);
+}
+// Attention où on met le 'return(sum)'. S'il est dans la boucle for, alors cela ne retourne
+// que la première itération (dont le premier chiffre du tablaeau)
+
+console.log(sumOfArray(evenArray));
+console.log(sumOfArray(oddArray));
+console.log(sumOfArray(oddArray) + sumOfArray(evenArray))
