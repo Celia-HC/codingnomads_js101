@@ -1108,27 +1108,15 @@ let jsonData = {
   }
   
   /* 2. Output to the console all the temperatures in Vancouver in Celsius,
-  *    convert if needed.
-  */
+  *    convert if needed.  */
 
 function fToC (tempInF) {
     tempInC = (tempInF - 32) * (5/9);
     return(tempInC);
 }
 
-/* Afficher toutes les températures en Celcius :
-
+/* Première essai, avec utilisation de forEach
 jsonData.data.forEach(function(element) {
-    if (element.Scale == "Fahrenheit") {
-        tempInC = fToC (element.Temperature);
-    } else {
-        tempInC = element.Temperature;
-    }
-    console.log(tempInC.toFixed(0));
-})
-*/
-
-let tempInVancouver = jsonData.data.forEach(function(element) {
     // Pour chaque élément du tableau data, vérifie si la ville = Vancouver
     if (element.City == "Vancouver") {
         // Vérifie si température = F ou C
@@ -1137,13 +1125,113 @@ let tempInVancouver = jsonData.data.forEach(function(element) {
         } else {
             tempInC = element.Temperature;
         }
-    } 
+    } //console.log(tempInC.toFixed(0))
     // Affiche la liste sur la console, avec 0 chiffre après la virgule
 }
 )
+*/
 
-console.log(tempInVancouver);
+//Second essai, avec utilisation de filter et map + fonction ternaire
 
+let arrayVancouverInCelcius = jsonData.data
+    .filter(element => element.City === "Vancouver")
+    .map(element => {
+        return (element.Scale === "Celsius") ? element.Temperature : fToC(element.Temperature);
+    }          
+    );
+//console.log(arrayVancouverInCelcius);
 
-let avgTempInCity = getAvgTemp("Vancouver", "C");
-console.log(avgTempInCity);
+/* 3. Output to the console all the temperatures in Jerusalem in Fahrenheit,
+*    convert if needed. Fahrenheit = (Celsius * 1.8) + 32*/
+
+function cToF (tempInC) {
+    tempInF = (tempInC * 1.8) + 32;
+    return(tempInF);
+}
+
+let arrayJerusalemInF = jsonData.data
+    .filter(element => element.City === "Jerusalem")
+    .map(element => {
+        return (element.Scale === "Fahrenheit") ? element.Temperature : cToF(element.Temperature);
+    }
+    );
+//console.log(arrayJerusalemInF);
+
+/* 4. Get the average temperatures for Vancouver and Jerusalem in both Celsius
+*    and Fahrenheit and output them to the console.*/
+
+//Températures à Vancouver en Celsius
+averageVancouverInC = (arrayVancouverInCelcius.reduce ((acc,val) => acc + val,0) / arrayVancouverInCelcius.length);
+//console.log(averageVancouverInC);
+
+/* 5. Write a function that will return a chosen city's average temperature in
+ *    either fahrenheit or celsius defined by two parameters as shown in the
+ *    code below.*/
+
+//let avgTempInCity = getAvgTemp("Vancouver", "C");
+//console.log(avgTempInCity);
+
+/*
+function avgTempInCity(city,scale) {
+    let dataCity = jsonData.data.filter (function(element) {
+        return element.City === city;
+    });
+    let dataCityTemp = dataCity.filter (function(element) {
+        return element.Scale === scale;
+    });
+    if (scale === "C") {
+        dataCityTemp.forEach(function(element) {
+            element.Temperature = fToC (element.Temperature)
+        })}
+    else if (scale === "F") {
+        dataCityTemp.forEach(function(element) {
+            element.Temperature = cToF (element.Temperature)
+        })}
+    let sum = dataCityTemp.reduce(function(acc, val) {
+            return acc + val.Temperature;
+        }, 0);
+    let average = sum / dataCityTemp.length;
+    
+    return average.toFixed(2);
+}
+
+console.log(avgTempInCity("Vancouver","C"));
+*/
+
+function avgTempInCity(city, scale) {
+    // Filtrer les données pour la ville spécifiée
+    let dataCity = jsonData.data.filter(function(element) {
+        return element.City === city;
+    });
+
+    // Filtrer les données pour l'échelle de température spécifiée
+    let dataCityTemp = dataCity.filter(function(element) {
+        return element.Scale === scale;
+    });
+
+    // Vérifier s'il y a des données pour la ville et l'échelle spécifiées
+    if (dataCityTemp.length === 0) {
+        return "Aucune donnée disponible pour la ville " + city + " avec l'échelle de température " + scale + ".";
+    }
+
+    // Convertir les températures si nécessaire
+    if (scale === "C") {
+        dataCityTemp.forEach(function(element) {
+            element.Temperature = fToC(element.Temperature);
+        });
+    } else if (scale === "F") {
+        dataCityTemp.forEach(function(element) {
+            element.Temperature = cToF(element.Temperature);
+        });
+    }
+
+    // Calculer la température moyenne
+    let sum = dataCityTemp.reduce(function(acc, val) {
+        return acc + val.Temperature;
+    }, 0);
+    let average = sum / dataCityTemp.length;
+
+    return average ;
+}
+
+console.log(avgTempInCity("Jerusalem","F"));
