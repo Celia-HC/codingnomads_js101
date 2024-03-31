@@ -24,7 +24,7 @@
  * 4. Create a new array where each row only has the "date", "description", and "amount"
  *    fields of rows that have the category "Eating Out".
  * 5. Create another array where each row only has the "date", "description", and "amount"
- *    fields of rows that have that have the category "Gear and Clothing".
+ *    fields of rows that have the category "Gear and Clothing".
  */
 
 let expenses = [
@@ -996,11 +996,8 @@ console.log("Total amount paid for Groceries:", totalGroceries);
  *    would be $50.*/
 
 //Créer un tableau avec tous les comptes existants dans expenses
-let accounts = new Set (
-  expenses;
-expenses.forEach((element) => {
+let arrayAccount = new Set (expenses.slice(1).map(element => element[4]));
 
-})
 
 //Fonction qui retourne le total de dépenses pour le compte donné en paramètre
 let total = 0;
@@ -1014,4 +1011,32 @@ function totalByAccount (account) {
   return(total)
 }
 
-console.log(totalByAccount("Alaska Airlines Visa"))
+arrayAccount.forEach((element) => 
+	{totalByAccount(element);
+		console.log(`Total pour account ${element} : ${total.toFixed(2)}$`) 
+	}
+)
+
+/*Note : attention à l'appellation des variables. "account" était utilisé à la fois pour le tableau avec tous les comptes
+et comme variable dans la fonction totalByAccount, ce qui a produit un résultat inattendu ([Object Set] au lieu du nom du compte)
+*/
+
+
+/* 4. Create a new array where each row only has the "date", "description", and "amount"
+*    fields of rows that have the category "Eating Out".*/
+
+let arrayEating = expenses
+	.filter((element, index) => {
+	return element[2] === "Eating Out"
+	})
+	.map(element => [element[0],element[1],element[3]]);
+//console.log(arrayEating);
+//console.log(arrayEating.length);
+
+let arrayGear = expenses
+	.filter((element, index) => {
+	return element[2] === "Gear and Clothing"
+	})
+	.map(element => [element[0],element[1],element[3]]);
+//console.log(arrayGear);
+//console.log(arrayGear.length);
