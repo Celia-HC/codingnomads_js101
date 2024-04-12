@@ -2,11 +2,16 @@
 	box-sizing: border-box;
 }
 
-/*--text: #0f1618;
---background: #f8fafb;
+:root{
+--text-lightmode: #0f1618;
+--text-darkmode: #f8fafb;
+--background_lightmode: #f8fafb;
 --primary: #135D7B;
 --secondary: #95c5d8;
---accent: #6ab3d2;*/
+--accent: #6ab3d2;
+--background-darkmode: #1A272C;
+}
+
 
 body {
 	font-family: poppins, sans-serif;
@@ -14,12 +19,12 @@ body {
 	padding: 0;
 	font-size: 14px;
 	color: #0f1618;
-    background-color: #f8fafb;
+    background-color: var(--background_lightmode);
 	line-height: 1.3;
 }
 
 .topbar {
-	background-color: #135D7B;
+	background-color: var(--primary);
 	text-align: center;
 	color: #f8fafb;
 	margin-top: 0;
@@ -67,22 +72,22 @@ body {
 	margin-right: 15px;
     margin-bottom: 10px;
     padding: 10px 20px 10px 20px;
-    color: #135D7B;
+    color: var(--primary);
     border: 1px solid transparent;
     text-align: center;
 }
 
 .sidebar a:hover {
-    border: 1px solid #6ab3d2;
+    border: 1px solid var(--secondary);
     border-radius: 4px;
-    background-color: #95c5d8;
+    background-color: var(--secondary);
     font-weight: bold;
 }
 
 footer {
     text-align: center;
     padding: 10px 0;
-    border-top: 1px solid #95c5d8;
+    border-top: 1px solid var(--secondary);
 }
 
 .main {
@@ -90,17 +95,53 @@ footer {
 }
 
 .content h1 {
-    color: #135D7B;
+    color: var(--primary);
+    margin-top: 25px;
+    margin-bottom: 5px;
 }
 
-.btn-dark-light {
+.btn-toggle {
     font-size: 0.8em;
     border: 1px solid #95c5d8;
     border-radius: 2px;
     position: absolute;
     top:15px;
     right:25px;
-    color:#135D7B;
+    color:var(--primary);
     padding: 2px 8px;
     cursor: pointer;
+}
+
+.img {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+}
+
+.img img {
+    width: 25%;
+    border-radius: 5px;
+    margin-bottom: 35px;
+}
+
+
+body.dark {
+    background-color: var(--background-darkmode);
+    color: var(--text-darkmode);
+} 
+
+body.dark .sidebar a {
+    color: var(--text-darkmode);
+}
+
+body.dark .sidebar a:hover {
+    color: var(--primary);
+}
+
+body.dark main h1 {
+    color: var(--secondary);
+}
+
+body.dark img {
+    opacity: .95;
 }
