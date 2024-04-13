@@ -7,11 +7,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Zen+Loop:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+    <script src="script.js" defer></script>
 </head>
 <body class="light">
     <header class="topbar">
         <button class="btn-toggle">Mode sombre</button>
+        <div class="btn-size-position">
+            <button class="btn-size btn-size-plus">+</button>
+            <button class="btn-size btn-size-less">-</button>
+        </div>
         <h1>Celia Hibou-Cwancig</h1>
         <p>Développeuse front-end</p>
     </header>
@@ -67,24 +71,3 @@
 </body>
 </html>
 
-<script>
-    const btnToggle = document.querySelector(".btn-toggle");
-//On attribut une constante à notre bouton
-
-btnToggle.addEventListener("click", () => {
-const body = document.body;
-
-// On met le body dans une constante pour éviter d'avoir à répéter document.body
-
-if (body.classList.contains('dark')) {
-    body.classList.add('light');
-    body.classList.remove('dark');
-    btnToggle.innerHTML="Mode sombre";
-} else if (body.classList.contains('light')) {
-    body.classList.add('dark');
-    body.classList.remove('light');
-    btnToggle.innerHTML="Mode clair";
-}
-});
-
-</script>

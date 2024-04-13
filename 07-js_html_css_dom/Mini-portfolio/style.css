@@ -10,6 +10,7 @@
 --secondary: #95c5d8;
 --accent: #6ab3d2;
 --background-darkmode: #1A272C;
+--font-size:14px;
 }
 
 
@@ -17,7 +18,7 @@ body {
 	font-family: poppins, sans-serif;
 	margin: 0;
 	padding: 0;
-	font-size: 14px;
+	font-size: var(--font-size);
 	color: #0f1618;
     background-color: var(--background_lightmode);
 	line-height: 1.3;
@@ -86,7 +87,7 @@ body {
 
 footer {
     text-align: center;
-    padding: 10px 0;
+    padding-top: 10px;
     border-top: 1px solid var(--secondary);
 }
 
@@ -101,7 +102,7 @@ footer {
 }
 
 .btn-toggle {
-    font-size: 0.8em;
+    font-size: 12px;
     border: 1px solid #95c5d8;
     border-radius: 2px;
     position: absolute;
@@ -110,6 +111,23 @@ footer {
     color:var(--primary);
     padding: 2px 8px;
     cursor: pointer;
+}
+
+.btn-size {
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #95c5d8;
+    border-radius: 2px;
+    color:var(--primary);
+    padding: 2px 8px;
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+.btn-size-position {
+    position:absolute;
+    top:40px;
+    right:25px;
 }
 
 .img {
@@ -123,6 +141,12 @@ footer {
     border-radius: 5px;
     margin-bottom: 35px;
 }
+
+.footer-decoration {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
 
 
 body.dark {
