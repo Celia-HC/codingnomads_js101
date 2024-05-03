@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">Online <span class="bold">converter</span></h1>
+        <div class="conversion-selection">
+            <p>I want to convert...</p>
+            <button>A temperature 🌡️</button>
+            <button>A distance 📏</button>
+        </div>
+        <div class="conversion-box js-box-distance">
+            <div>
+                <input
+                    type="number"
+                    placeholder="value in cm"
+                    class="js-input"
+                    id="inputCm"
+                    >
+                <label for="inputCm">cm</label>
+            </div>
+            <div>
+                <input
+                    type="number"
+                    placeholder="value in meters"
+                    class="js-input"
+                    id="inputMeters"
+                    >
+                <label for="inputMeters">meters</label>
+            </div>
+            <div>
+                <input
+                    type="number"
+                    placeholder="value in inches"
+                    class="js-input"
+                    id="inputInch"
+                    >
+                <label for="inputInch">inches</label>
+            </div>
+            <div>
+                <input
+                    type="number"
+                    placeholder="value in miles"
+                    class="js-input"
+                    id="inputMiles"
+                    >
+                <label for="inputMiles">miles</label>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

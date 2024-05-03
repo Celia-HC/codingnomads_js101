@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1 class="title">Online <span class="bold">converter</span></h1>
+        <div class="conversion-selection">
+            <p>I want to convert a...</p>
+            <button class="js-btn-temp">Temperature 🌡️</button>
+            <button class="js-btn-dist">Distance 📏</button>
+        </div>
+        <div class="conversion-box js-box-distance">
+            <div>
+                <input
+                    type="number"
+                    placeholder="value..."
+                    class="js-input-value-dist"
+                    >
+                <label for="input-value-dist">in...</label>
+                <select name="distance" class="js-input-select-dist" id="input-value-dist">
+                    <option value="inputCm">cm</option>
+                    <option value="inputInch">inch</option>
+                    <option value="inputMiles">miles</option>
+                    <option value="inputMeters">meters</option>
+                </select>
+            </div>
+            <p>=</p>
+            <div>
+                <input
+                    type="number"
+                    placeholder="value..."
+                    class="output js-output-value-dist"
+                    disabled
+                    >
+                <label for="outputValue">in...</label>
+                <select name="distance" class="js-output-select-dist">
+                    <option value="inputCm">cm</option>
+                    <option value="inputInch">inch</option>
+                    <option value="inputMiles">miles</option>
+                    <option value="inputKm">km</option>
+                </select>
+            </div>
+        </div>
+        <div class="conversion-box js-box-temperature">
+            <div>
+                <input
+                    type="number"
+                    placeholder="value..."
+                    class="js-input-value-temp"
+                    >
+                <label for="input-value-temp">in...</label>
+                <select name="distance" class="js-input-select-temp" id="input-value-temp">
+                    <option value="celsius">Celsius</option>
+                    <option value="farenheit">Farenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+            </div>
+            <p>=</p>
+            <div>
+                <input
+                    type="number"
+                    placeholder="value..."
+                    class="output js-output-value-temp"
+                    disabled
+                    >
+                <label for="outputValue">in...</label>
+                <select name="distance" class="js-output-select-temp">
+                    <option value="celsius">Celsius</option>
+                    <option value="farenheit">Farenheit</option>
+                    <option value="kelvin">Kelvin</option>
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

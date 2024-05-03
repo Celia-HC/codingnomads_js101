@@ -9,7 +9,7 @@ Remember all the different conversion functions that you have already coded?  No
 - Create a Code Pen to see what things are looking like without having to save and refresh a browser.
 - Built out your basic HTML and CSS.
 - Get your JavaScript talking to your HTML by getting the text from the input boxes.
-- You may have to re-write or re-factor a lot of your JavaScript depending on what design you have gone for.
+- You may have to re-write or re-factor a lot of y+our JavaScript depending on what design you have gone for.
 - Get a Minimum Viable Product (MVP) working. That is a very basic and ugly version of the page, but something that works. Then iterate over it making it better and better.
 - Publish it on GitHub Pages and show the world!
 - Get some feedback and jot down some things you would like to improve and then implement it!
