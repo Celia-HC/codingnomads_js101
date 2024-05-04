@@ -10,31 +10,56 @@ outputSelectDist.addEventListener('change', calculateDistance);
 
 function calculateDistance() {
     let distToConvert = parseFloat(inputValueDist.value);
+    console.log("Ecoute évènement");
 
     switch (inputSelectDist.value) {
 
-        case 'inputCm':
-            if (outputSelectDist.value === "celsius") {
-                outputValueDist.value=`${distToConvert}`;
-            } else if (outputSelectDist.value === "farenheit") {
-                outputValueDist.value=`${cToF(distToConvert).toFixed(1)}`;
-            } else if (outputSelectDist.value === "kelvin") {
-                outputValueDist.value=`${cToK(distToConvert)}`;
+        case 'cm':
+            if (outputSelectDist.value === "cm") {
+                outputValueDist.value=`${distToConvert}`
+            } else if (outputSelectDist.value === "km") {
+                outputValueDist.value=`${cmToKm(distToConvert)}`;
+            } else if (outputSelectDist.value === "inch") {
+                outputValueDist.value=`${cmToInch(distToConvert).toFixed(2)}`;
+            } else if (outputSelectDist.value === "miles") {
+                outputValueDist.value=`${cmToMiles(distToConvert)}`;
             }
         break;
 
-        case 'inputKm':
-            console.log("valeur en mètres");
+        case 'km':
+            if (outputSelectDist.value === "cm") {
+                outputValueDist.value=`${kmToCm(distToConvert)}`;
+            } else if (outputSelectDist.value === "km") {
+                outputValueDist.value=`${distToConvert}`;
+            } else if (outputSelectDist.value === "inch") {
+                outputValueDist.value=`${kmToInch(distToConvert).toFixed(2)}`;
+            } else if (outputSelectDist.value === "miles") {
+                outputValueDist.value=`${kmToMiles(distToConvert)}`;
+            }
         break;
 
-        case 'inputInch':
-
-
+        case 'inch':
+            if (outputSelectDist.value === "cm") {
+                outputValueDist.value=`${Inch(distToConvert)}`;
+            } else if (outputSelectDist.value === "km") {
+                outputValueDist.value=`${cmToKm(distToConvert)}`;
+            } else if (outputSelectDist.value === "inch") {
+                outputValueDist.value=`${distToConvert}`;
+            } else if (outputSelectDist.value === "miles") {
+                outputValueDist.value=`${cmToMiles(distToConvert)}`;
+            }
         break;
 
-        case 'inputMiles':
-
-
+        case 'miles':
+            if (outputSelectDist.value === "cm") {
+                outputValueDist.value=`${milesToCm(distToConvert).toFixed(2)}`;
+            } else if (outputSelectDist.value === "km") {
+                outputValueDist.value=`${milesToKm(distToConvert).toFixed(2)}`;
+            } else if (outputSelectDist.value === "inch") {
+                outputValueDist.value=`${milesToInch(distToConvert)}`;
+            } else if (outputSelectDist.value === "miles") {
+                outputValueDist.value=`${distToConvert}`;
+            }
         break;
 
         default:
@@ -83,9 +108,24 @@ function milesToCm (distInM) {
     return(distInCm);
 }
 
-function milesToKm (distInM) {
-    let distInKm = distInM * 1.609344;
+function milesToInch (distInM) {
+    let distInInch = distInM * 63360;
+    return(distInInch);
+}
+
+function InchToCm (distInInch) {
+    let distInCm = distInInch * 0.3937007874;
+    return(distInCm);
+}
+
+function InchToKm (distInInch) {
+    let distInKm = distInInch ;
     return(distInKm);
+}
+
+function InchToMiles (distInInch) {
+    let distInMiles = distInInch ;
+    return(distInMiles);
 }
 
 /*Script for Temperatures*/

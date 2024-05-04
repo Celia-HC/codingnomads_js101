@@ -43,6 +43,7 @@ button {
     border: transparent;
     margin: 0 10px 4vw;
     background-color: #f1f1f1c0;
+    transition: transform 50ms ease-in;
 }
 
 button:hover {
@@ -112,6 +113,6 @@ button:active {
     color: black;
 }
 
-.js-box-distance {
+.js-box-distance, .js-box-temperature {
     display: none;
 }
